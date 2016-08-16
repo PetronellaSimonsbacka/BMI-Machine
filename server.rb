@@ -1,3 +1,3 @@
-require './server'
+require 'sinatra'
 
-run Sinatra::Application
+set :public_folder, proc { File.join(root) }

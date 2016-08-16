@@ -3,15 +3,6 @@ describe('BMI_UI - index.html', function() {
         jasmine.getFixtures().fixturesPath = '.';
         loadFixtures('index.html');
         $.holdReady(false);
-    });
-
-});
-
-describe('BMI_UI - index.html', function() {
-    beforeEach(function() {
-        jasmine.getFixtures().fixturesPath = '.';
-        loadFixtures('index.html');
-        $.holdReady(false);
         $('#weight').val('90');
         $('#height').val('186');
         $('#calculate').trigger('click');
