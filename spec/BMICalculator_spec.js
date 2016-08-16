@@ -3,12 +3,12 @@ describe("BMICalculator", function() {
   var person;
 
   beforeEach(function() {
-    person = new Person({weight: 90, height: 186});
-    calculator = new BMICalculator();
+    person = new Person({weight: 85, height: 185});
   });
 
   it("calculates BMI for a person using metric method", function() {
-    calculator.metric_bmi(person);
-    expect(person.bmiValue).toEqual(26.01);
+    // calculator.metric_bmi(person);
+    person.calculate_bmi();
+    expect(person.bmiValue).toEqual(24.84);
   });
 });
