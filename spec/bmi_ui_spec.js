@@ -6,6 +6,7 @@ describe('BMI_UI - index.html', function() {
         $('#weight').val('90');
         $('#height').val('186');
         $('#calculate').trigger('click');
+        $('#imperial').trigger('click');
     });
 
     it("displays BMI Value", function() {
