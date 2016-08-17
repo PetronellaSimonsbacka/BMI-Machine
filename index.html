@@ -12,6 +12,8 @@
     <input type="text" id="weight" placeholder="Weight in kg">
     <input type="text" id="height" placeholder="Height in cm">
     <input type="button" id="calculate" value="Calculate metric BMI">
+    </form>
+    <form>
     <input type="text" id="weight" placeholder="Weight in stone">
     <input type="text" id="height" placeholder="Height in feet">
     <input type="button" id="imperial" value="Calculate imperial BMI">
@@ -35,6 +37,20 @@
   });
 </script>
 
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#imperial').click(function () {
+      var w = parseFloat($('#weight').val());
+      var h = parseFloat($('#height').val());
+      var person = new Person({weight: w, height: h});
+      var imperialCalc = ((weight)/(height*height)*703);
+      imperialCalc = console.log(imperialCalc.toFixed(1));
+      person.calculate_bmi();
+      $('#display_value').html('Your BMI is ' + person.bmiValue);
+      $('#display_message').html('and you are '+ person.bmiMessage);
+    });
+  });
+    </script>
 
   </body>
 </html>
