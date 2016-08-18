@@ -20,6 +20,6 @@ describe("Person", function() {
 
   it("should have a BMI Message", function() {
     person.calculate_bmi();
-    expect(person.bmiMessage).toEqual("and you are Overweight")
+    expect(person.bmiMessage).toEqual("Overweight")
   });
 });

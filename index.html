@@ -56,9 +56,8 @@
 </script>
 <script>
     function imperial() {
-      var height = document.getElementById("height").value * 0,032808399
-      ;
-      var weight = document.getElementById("weight").value * 2,204624 * 703;
+      var feet = parseFloat(document.getElementById("feet").value);
+      var stone = parseFloat(document.getElementById("stone").value) * 703;
       var denom = Math.pow(height, 2);
       var totalbmi = weight/denom;
 
