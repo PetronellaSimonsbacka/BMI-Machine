@@ -18,7 +18,7 @@ function setBMIMessage (obj, value){
     obj.bmiMessage = "Normal"
   }
   if (obj.bmiValue > 25 && obj.bmiValue < 30) {
-    obj.bmiMessage = "Overweight"
+    obj.bmiMessage = "and you are Overweight"
   }
   if (obj.bmiValue > 30) {
     obj.bmiMessage = "Obese"
