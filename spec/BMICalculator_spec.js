@@ -12,3 +12,4 @@ describe("BMICalculator", function() {
     expect(person.bmiValue).toEqual(24.84);
   });
 });
+Contact GitHub API Training Shop Blog About
