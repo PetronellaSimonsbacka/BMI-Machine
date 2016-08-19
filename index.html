@@ -1,54 +1,55 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <h1>Body Mass Index Calculator</h1>
-    <script>
-    function myFunction() {
-    document.getElementById("demo").innerHTML = "Just fill in your weight and height in the BMI-calculator.";
+<script language="JavaScript">
+<!--
+function calculateMetricBmi() {
+var weight = document.bmiForm.weight.value
+var height = document.bmiForm.height.value
+if(weight > 0 && height > 0){
+var finalBmi = weight/(height/100*height/100)
+document.bmiForm.bmi.value = finalBmi
+if(finalBmi < 18.5){
+document.bmiForm.meaning.value = "That you are too thin."
+}
+if(finalBmi > 18.5 && finalBmi < 25){
+document.bmiForm.meaning.value = "That you are healthy."
+}
+if(finalBmi > 25){
+document.bmiForm.meaning.value = "That you have overweight."
+}
+}
+else{
+alert("Please Fill in everything correctly")
+}
+}
+
+function calculateImperialBmi() {
+  var weight = document.bmiForm.weight.value
+  var height = document.bmiForm.height.value
+  if(weight > 0 && height > 0){
+    var finalBmi = (weight*703)/(height*height)
+    document.bmiForm.bmi.value = finalBmi
+    if(finalBmi < 18.5){
+      document.bmiForm.meaning.value = "That you are too thin."
     }
-    </script>
-    <meta charset="utf-8">
-    <form action="" id="toggle_system" >
-    <input type="radio" name="system" value="metric" checked id="metric_radio"> Metric&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="radio" name="system" value="imperial" id="imperial_radio"> Imperial<br>
-     </form>
-      </span>
-    <title></title>
-    <script src="src/person.js"></script>
-    <script src="src/BMICalculator.js"></script>
-    <script src='https://code.jquery.com/jquery-2.1.4.js'></script>
-    </head>
-    <body>
-    <form>
-    <input type="text" id="weight" placeholder="Weight">
-    <input type="text" id="height" placeholder="Height">
-    <input type="button" id="calculate" value="Calculate BMI">
-
-    </form>
-
-    </form>
-    <div>
-    <span id="display_value"></span>
-    <span id="display_message"></span>
-
-    </div>
-
-    <script type="text/javascript">
-    $(document).ready(function () {
-    $('#calculate').click(function () {
-      var w = parseFloat($('#weight').val());
-      var h = parseFloat($('#height').val());
-      var person = new Person({weight: w, height: h});
-      person.calculate_bmi();
-      $('#display_value').html('Your BMI is ' + person.bmiValue);
-      $('#display_message').html('and you are '+ person.bmiMessage);
-    });
-  });
+    if(finalBmi > 18.5 && finalBmi < 25){
+      document.bmiForm.meaning.value = "That you are healthy."
+    }
+    if(finalBmi > 25){
+    document.bmiForm.meaning.value = "That you have overweight."
+    }
+  } else{
+    alert("Please Fill in everything correctly")
+  }
+}
+//-->
 </script>
 
-  </body>
+<form name="bmiForm">
+Your Weight(kg): <input type="text" name="weight" size="10"><br />
+Your Height(cm): <input type="text" name="height" size="10"><br />
+<input type="button" value="Calculate metric BMI" onClick="calculateMetricBmi()">
+<input type="button" value="Calculate imperial BMI" onClick="calculateImperialBmi()"><br />
 
-  <p id="demo"/p>
-
-  <button type="button" onclick="myFunction()">Do you want to know your BMI?</button>
-</html>
+Your BMI: <input type="text" name="bmi" size="10"><br />
+This Means: <input type="text" name="meaning" size="25"><br />
+<input type="reset" value="Reset" />
+</form>

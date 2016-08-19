@@ -2,7 +2,7 @@ describe("Person", function() {
   var person;
 
   beforeEach(function() {
-    person = new Person({weight: 90, height: 186});
+    person = new Person({weight: 90, height: 186, system: "metric"});
   });
 
   it("should have weight of 90", function() {
@@ -20,6 +20,21 @@ describe("Person", function() {
 
   it("should have a BMI Message", function() {
     person.calculate_bmi();
-    expect(person.bmiMessage).toEqual("Overweight")
+    expect(person.bmiMessage).toEqual("in need of a few more hamburgers...")
   });
 });
+
+describe("Imperial Person", function() {
+  var person;
+
+  beforeEach(function() {
+    person = new Person({weight_imperial: 160, height_feet: 5, height_inches: 6, system: "imperial"});
+  });
+
+  it("should have a BMI message", function() {
+    person.calculate_bmi();
+    expect(person.bmiMessage).toEqual("in need of a few more hamburgers...")
+  });
+
+});
+Contact GitHub API Training Shop Blog About
