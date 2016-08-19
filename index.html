@@ -34,7 +34,7 @@
     </div>
 
     <script type="text/javascript">
-  $(document).ready(function () {
+    $(document).ready(function () {
     $('#calculate').click(function () {
       var w = parseFloat($('#weight').val());
       var h = parseFloat($('#height').val());
@@ -45,34 +45,6 @@
     });
   });
 </script>
-<script type="text/javascript">
-  $(document).ready(function () {
-    $('#imperial').click(function () {
-      var w = parseFloat($('#weight').val());
-      var h = parseFloat($('#height').val());
-      var person = new Person({weight: w, height: h});
-      var imperialCalc = ((weight)/(height*height)*703);
-      imperialCalc = console.log(imperialCalc.toFixed(1));
-      person.calculate_bmi();
-      $('#display_value').html('Your BMI is ' + person.bmiValue);
-      $('#display_message').html('and you are '+ person.bmiMessage);
-    });
-  });
-</script>
-<script>
-    function imperial() {
-      var feet = parseFloat(document.getElementById("feet").value);
-      var stone = parseFloat(document.getElementById("stone").value) * 703;
-      var denom = Math.pow(height, 2);
-      var totalbmi = weight/denom;
-      var bmi = document.getElementById("totalbmi");
-      if (isFinite(totalbmi)) {
-        imperial.value = totalbmi.toFixed(2);
-      }
-    }
-</script>
-
-
 
   </body>
 
