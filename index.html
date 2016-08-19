@@ -11,17 +11,17 @@ if(weight > 0 && height > 0){
 var finalBmi = weight/(height/100*height/100)
 document.bmiForm.bmi.value = finalBmi
 if(finalBmi < 18.5){
-document.bmiForm.meaning.value = "You are too thin. Eat something."
+document.bmiForm.meaning.value = "You are too thin."
 }
 if(finalBmi > 18.5 && finalBmi < 25){
 document.bmiForm.meaning.value = "You have a healthy weight."
 }
 if(finalBmi > 25){
-document.bmiForm.meaning.value = "You are overweight. Why not start playing rugby?"
+document.bmiForm.meaning.value = "You are overweight."
 }
 }
 else{
-alert("Please Fill in everything correctly")
+alert("Please fill in everything correctly")
 }
 }
 
@@ -32,16 +32,16 @@ function calculateImperialBmi() {
     var finalBmi = (weight*703)/(height*height)
     document.bmiForm.bmi.value = finalBmi
     if(finalBmi < 18.5){
-      document.bmiForm.meaning.value = "That you are too thin."
+      document.bmiForm.meaning.value = "Eat something"
     }
     if(finalBmi > 18.5 && finalBmi < 25){
-      document.bmiForm.meaning.value = "That you are healthy."
+      document.bmiForm.meaning.value = "You are healthy."
     }
     if(finalBmi > 25){
-    document.bmiForm.meaning.value = "That you have overweight."
+    document.bmiForm.meaning.value = "Why not try rugby?"
     }
   } else{
-    alert("Please Fill in everything correctly")
+    alert("Please fill in everything correctly")
   }
 }
 //-->
@@ -51,7 +51,6 @@ function calculateImperialBmi() {
 h1   {color: blue;}
 body {background-color: powderblue;}
 h1   {color: blue;}
-p    {color: red;}
 </style>
 
   <body>
